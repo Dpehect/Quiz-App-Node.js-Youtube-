@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soru Sitesi</title>
+
+    <style>
+        #soru1{
+            margin-left: 300px;
+        }
+        #soru2{
+            margin-left: 300px;
+        }
+        #soru3{
+            margin-left: 300px;
+        }
+        #soru4{
+            margin-left: 300px;
+        }
+        #girilencevap1{
+            margin-left: 300px;
+        }
+        #girilencevap2{
+            margin-left: 300px;
+        }
+        #girilencevap3{
+            margin-left: 300px;
+        }
+        #girilencevap4{
+            margin-left: 300px;
+        }
+        #sorular{
+            margin-top: 150px;
+            margin-left: 150px;
+        }
+        #sonuc{
+            margin-left: 300px;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div id="sorular">
+        <label id="soru1"></label>
+        <input type="text" id="girilencevap1">
+        <label id="soru2"></label>
+        <input type="text" id="girilencevap2">
+        <label id="soru3"></label>
+        <input type="text" id="girilencevap3">
+        <label id="soru4"></label>
+        <input type="text" id="girilencevap4">
+        <input type="submit" id="onayla" value="Onayla">
+        <p id="sonuc"></p>
+    </div>
+    
+  <script>
+    const veridizini=[
+        {
+            "id":0,
+            "soru":"Kalemin ingilizcesi nedir?",
+            "cevap":"Pencil"
+
+        },
+        {
+            "id":1,
+            "soru":"Kitabin ingilizcesi nedir?",
+            "cevap":"Book"
+
+        },
+          {
+            "id":2,
+            "soru":"Karpuzun ingilizcesi nedir?",
+            "cevap":"Watermelon"
+
+        },
+        {
+            "id":3,
+            "soru":"Bilgisayarin ingilizcesi nedir?",
+            "cevap":"Computer"
+
+        },
+    ]
+
+    document.getElementById('soru1').innerHTML=veridizini[0].soru
+    document.getElementById('soru2').innerHTML=veridizini[1].soru
+    document.getElementById('soru3').innerHTML=veridizini[2].soru
+    document.getElementById('soru4').innerHTML=veridizini[3].soru
+
+   let score = 0
+
+   document.getElementById('onayla').addEventListener("click",function(){
+        if(document.getElementById('girilencevap1').value===veridizini[0].cevap){
+            score+=1
+        }
+        if(document.getElementById('girilencevap2').value===veridizini[1].cevap){
+            score+=1
+        }
+        if(document.getElementById('girilencevap3').value===veridizini[2].cevap){
+            score+=1
+        }
+        if(document.getElementById('girilencevap4').value===veridizini[3].cevap){
+            score+=1
+        }
+        document.getElementById('sonuc').innerHTML="Skor : "+score
+   })
+    
+  </script>
+
+</body>
+</html>
